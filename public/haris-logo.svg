@@ -1,0 +1,25 @@
+<svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular sutil -->
+  <circle cx="80" cy="50" r="45" fill="none" stroke="#ccc55d" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Alas izquierdas -->
+  <path d="M25 50 L10 35 L15 37 L25 47 L15 57 L10 59 L25 50 Z" fill="#ccc55d"/>
+  <path d="M40 50 L30 40 L33 41 L40 47 L33 53 L30 54 L40 50 Z" fill="#b5b053"/>
+  <path d="M50 50 L45 45 L47 46 L50 48 L47 52 L45 53 L50 50 Z" fill="#ccc55d"/>
+  
+  <!-- Alas derechas -->
+  <path d="M135 50 L150 35 L145 37 L135 47 L145 57 L150 59 L135 50 Z" fill="#ccc55d"/>
+  <path d="M120 50 L130 40 L127 41 L120 47 L127 53 L130 54 L120 50 Z" fill="#b5b053"/>
+  <path d="M110 50 L115 45 L113 46 L110 48 L113 52 L115 53 L110 50 Z" fill="#ccc55d"/>
+  
+  <!-- Letra H central estilizada -->
+  <rect x="70" y="30" width="4" height="40" fill="#333" rx="2"/>
+  <rect x="86" y="30" width="4" height="40" fill="#333" rx="2"/>
+  <rect x="70" y="47" width="20" height="4" fill="#ccc55d" rx="2"/>
+  
+  <!-- Texto GRUPO -->
+  <text x="80" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#333" letter-spacing="2px">GRUPO</text>
+  
+  <!-- Texto HARIS S.A. -->
+  <text x="80" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333" letter-spacing="1px">HARIS S.A.</text>
+</svg>
