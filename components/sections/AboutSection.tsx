@@ -1,8 +1,13 @@
+"use client"
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Award, Clock, MapPin } from "lucide-react";
+import { useIntersectionObserver } from "@/lib/hooks/useIntersectionObserver";
 
 export default function AboutSection() {
+  const { ref, isIntersecting } = useIntersectionObserver();
+  
   const stats = [
     {
       icon: Users,
@@ -61,11 +66,17 @@ export default function AboutSection() {
           </div>
 
           {/* Estadísticas */}
-          <div className="grid grid-cols-2 gap-6">
+          <div ref={ref} className="grid grid-cols-2 gap-6">
             {stats.map((stat, index) => {
               const IconComponent = stat.icon;
+              const delayClass = `animate-delay-stats-${index + 1}`;
               return (
-                <Card key={index} className="text-center p-6">
+                <Card 
+                  key={index} 
+                  className={`text-center p-6 opacity-0-initial ${
+                    isIntersecting ? `animate-fade-in-scale ${delayClass}` : ''
+                  }`}
+                >
                   <CardContent className="p-0">
                     <IconComponent className="h-12 w-12 text-primary mx-auto mb-4" />
                     <div className="text-3xl font-bold text-slate-900 mb-2">

@@ -1,8 +1,13 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Quote } from "lucide-react";
+import { useIntersectionObserver } from "@/lib/hooks/useIntersectionObserver";
 
 export default function ExperienceSection() {
+  const { ref, isIntersecting } = useIntersectionObserver();
+  
   const testimonials = [
     {
       name: "María González",
@@ -55,39 +60,47 @@ export default function ExperienceSection() {
         </div>
 
         {/* Testimonios */}
-        <div>
+        <div ref={ref}>
           <h3 className="text-2xl font-bold text-slate-900 text-center mb-12">
             Lo que dicen nuestros clientes
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <Quote className="h-8 w-8 text-primary mb-4" />
-                  
-                  {/* Estrellas */}
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-
-                  <p className="text-slate-600 mb-6 italic">
-                    &ldquo;{testimonial.content}&rdquo;
-                  </p>
-
-                  <div>
-                    <div className="font-semibold text-slate-900">
-                      {testimonial.name}
+            {testimonials.map((testimonial, index) => {
+              const delayClass = index === 0 ? 'animate-delay-200' : index === 1 ? 'animate-delay-400' : 'animate-delay-600';
+              return (
+                <Card 
+                  key={index} 
+                  className={`hover:shadow-lg transition-shadow duration-300 opacity-0 ${
+                    isIntersecting ? `animate-fade-in-up ${delayClass}` : ''
+                  }`}
+                >
+                  <CardContent className="p-6">
+                    <Quote className="h-8 w-8 text-primary mb-4" />
+                    
+                    {/* Estrellas */}
+                    <div className="flex mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                      ))}
                     </div>
-                    <div className="text-sm text-slate-500">
-                      {testimonial.position}
+
+                    <p className="text-slate-600 mb-6 italic">
+                      &ldquo;{testimonial.content}&rdquo;
+                    </p>
+
+                    <div>
+                      <div className="font-semibold text-slate-900">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-sm text-slate-500">
+                        {testimonial.position}
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>

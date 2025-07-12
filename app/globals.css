@@ -171,28 +171,151 @@ html {
     }
   }
   
+  /* Hero Section Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3) translateY(20px);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05) translateY(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      text-shadow: 0 0 5px rgba(204, 197, 93, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(204, 197, 93, 0.6);
+    }
+  }
+  
+  /* Hero Animation Classes */
+  .animate-fade-in-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out forwards;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  /* Stats Cards Animation */
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.6s ease-out forwards;
+  }
+  
   /* Animaciones escalonadas para cards */
   .animate-delay-100 {
     animation-delay: 0.1s;
   }
   
   .animate-delay-200 {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
   }
   
   .animate-delay-300 {
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
   }
   
   .animate-delay-400 {
-    animation-delay: 0.7s;
+    animation-delay: 0.4s;
   }
   
   .animate-delay-500 {
-    animation-delay: 0.9s;
+    animation-delay: 0.5s;
   }
   
   .animate-delay-600 {
-    animation-delay: 1.1s;
+    animation-delay: 0.6s;
+  }
+  
+  /* Hero Animation Delays */
+  .animate-delay-hero-logo {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-delay-hero-title {
+    animation-delay: 0.4s;
+  }
+  
+  .animate-delay-hero-subtitle {
+    animation-delay: 0.6s;
+  }
+  
+  .animate-delay-hero-buttons {
+    animation-delay: 0.8s;
+  }
+  
+  .animate-delay-hero-features {
+    animation-delay: 1.0s;
+  }
+  
+  /* Elementos inicialmente ocultos */
+  .opacity-0-initial {
+    opacity: 0;
+  }
+  
+  /* Stats Animation Delays */
+  .animate-delay-stats-1 {
+    animation-delay: 0.1s;
+  }
+  
+  .animate-delay-stats-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-delay-stats-3 {
+    animation-delay: 0.3s;
+  }
+  
+  .animate-delay-stats-4 {
+    animation-delay: 0.4s;
   }
 }

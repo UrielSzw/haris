@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
 export default function Header() {
@@ -29,6 +29,7 @@ export default function Header() {
             width={60} 
             height={40}
             className="h-10 w-auto"
+            priority
           />
         </Link>
 
@@ -59,8 +60,11 @@ export default function Header() {
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right">
-            <div className="flex flex-col space-y-4 mt-8">
+          <SheetContent side="right" aria-describedby={undefined}>
+            <SheetHeader>
+              <SheetTitle>Menú de Navegación</SheetTitle>
+            </SheetHeader>
+            <div className="flex flex-col p-4 space-y-4 mt-4">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
